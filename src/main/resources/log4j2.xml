@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Configuration status="DEBUG">
+<Configuration status="error">
     <Appenders>
         <Console name="LogToConsole" target="SYSTEM_OUT">
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
@@ -23,8 +23,8 @@
         </Logger>
         <!-- Log everything in Spring Core -->
         <Logger name="org.springframework.core" level="debug" additivity="false">
-            <AppenderRef ref="Console" />
-            <AppenderRef ref="File" />
+            <AppenderRef ref="LogToConsole" />
+            <AppenderRef ref="LogToFile" />
         </Logger>
         <Root level="error">
             <AppenderRef ref="LogToFile"/>
