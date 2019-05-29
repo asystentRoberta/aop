@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration status="DEBUG">
+    <Appenders>
+        <Console name="LogToConsole" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+        <!-- File Appender -->
+        <File name="LogToFile" fileName="logs/app.log">
+            <PatternLayout>
+                <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+            </PatternLayout>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Logger name="pl.com.bohdziewicz.tutorials" level="debug" additivity="false">
+            <AppenderRef ref="LogToFile"/>
+            <AppenderRef ref="LogToConsole"/>
+        </Logger>
+        <!-- Log everything in Spring Boot -->
+        <Logger name="org.springframework.boot" level="debug" additivity="false">
+            <AppenderRef ref="LogToConsole"/>
+        </Logger>
+        <!-- Log everything in Spring Core -->
+        <Logger name="org.springframework.core" level="debug" additivity="false">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="File" />
+        </Logger>
+        <Root level="error">
+            <AppenderRef ref="LogToFile"/>
+            <AppenderRef ref="LogToConsole"/>
+        </Root>
+    </Loggers>
+</Configuration>
