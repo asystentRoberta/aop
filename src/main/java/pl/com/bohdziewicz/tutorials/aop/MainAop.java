@@ -6,8 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class MainAop {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
-        SimpleBeanImpl simpleBeanImpl = context.getBean("simpleBeanImpl", SimpleBeanImpl.class);
-        simpleBeanImpl.doSomething();
-
+        CustomerRepository customer = context.getBean("customer", CustomerRepository.class);
+        System.out.println(customer.getCustomerName(1L));
     }
 }
