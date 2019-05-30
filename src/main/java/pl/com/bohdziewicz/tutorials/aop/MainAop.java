@@ -8,5 +8,6 @@ public class MainAop {
         ApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
         CustomerRepository customer = context.getBean("customer", CustomerRepository.class);
         System.out.println(customer.getCustomerName(1L));
+        customer.getCustomer(1L);
     }
 }
