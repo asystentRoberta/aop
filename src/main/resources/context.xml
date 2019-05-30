@@ -12,9 +12,13 @@
     <bean id="loggingAspect" class="pl.com.bohdziewicz.tutorials.aop.LoggingAspect"/>
 
     <aop:config>
+        <aop:pointcut id="allGettersFromCustomerRepository" expression="execution(* pl.com.bohdziewicz.tutorials.aop.CustomerRepository.get* (**))"/>
         <aop:aspect ref="loggingAspect">
             <aop:before method="logExecution"
-                        pointcut="execution(* pl.com.bohdziewicz.tutorials.aop.CustomerRepository.get* (**))"/>
+                        pointcut-ref="allGettersFromCustomerRepository"/>
+            <aop:after-returning method="warnIfNull"
+                                 pointcut-ref="allGettersFromCustomerRepository"
+                                 returning="returnedValue"/>
         </aop:aspect>
 
     </aop:config>
