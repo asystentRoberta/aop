@@ -15,6 +15,9 @@
         <aop:aspect ref="loggingAspect">
             <aop:before method="logExecution"
                         pointcut="execution(* pl.com.bohdziewicz.tutorials.aop.CustomerRepository.get* (**))"/>
+            <aop:after-returning method="warnIfNull"
+                                 pointcut="execution(* pl.com.bohdziewicz.tutorials.aop.CustomerRepository.get* (**))"
+                                 returning="returnedValue"/>
         </aop:aspect>
 
     </aop:config>
