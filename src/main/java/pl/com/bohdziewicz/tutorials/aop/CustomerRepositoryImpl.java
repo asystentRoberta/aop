@@ -17,7 +17,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
         if (customer.getName() == null) {
             throw new RuntimeException("Customer name can't be null");
         } else {
-            System.out.println("Customer saved.");
+            System.out.println("Customer " + customer.getName() + " saved.");
         }
     }
 }

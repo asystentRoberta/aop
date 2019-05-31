@@ -11,6 +11,7 @@
 
     <bean id="customerRepository" class="pl.com.bohdziewicz.tutorials.aop.CustomerRepositoryImpl"/>
     <bean id="loggingAspect" class="pl.com.bohdziewicz.tutorials.aop.LoggingAspect"/>
+    <bean id="benchmarkAspect" class="pl.com.bohdziewicz.tutorials.aop.BenchmarkAspect"/>
 
     <aop:config>
 
@@ -28,6 +29,10 @@
             <aop:after-throwing method="serveExceptions" pointcut-ref="allAddersFromCustomerReository"
                                 throwing="exception"/>
             <aop:after method="methodExecuted" pointcut-ref="allAddersFromCustomerReository"/>
+        </aop:aspect>
+
+        <aop:aspect ref="benchmarkAspect">
+            <aop:around method="measureExecutionTime" pointcut="execution(* addCustomer(..))"/>
         </aop:aspect>
 
     </aop:config>
