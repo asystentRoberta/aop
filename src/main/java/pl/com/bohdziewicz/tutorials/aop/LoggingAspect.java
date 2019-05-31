@@ -2,6 +2,7 @@ package pl.com.bohdziewicz.tutorials.aop;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.aspectj.lang.JoinPoint;
 
 public class LoggingAspect {
 
@@ -24,8 +25,8 @@ public class LoggingAspect {
         logger.error("Exception: " + exception.getMessage());
     }
 
-    public void methodExecuted() {
+    public void methodExecuted(JoinPoint joinPoint) {
 
-        logger.info("Method has already executed");
+        logger.info("Method (method name): " + joinPoint.getSignature().getName() + " has already executed");
     }
 }
