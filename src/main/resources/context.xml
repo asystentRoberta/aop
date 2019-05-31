@@ -27,6 +27,7 @@
                                  returning="returnedValue"/>
             <aop:after-throwing method="serveExceptions" pointcut-ref="allAddersFromCustomerReository"
                                 throwing="exception"/>
+            <aop:after method="methodExecuted" pointcut-ref="allAddersFromCustomerReository"/>
         </aop:aspect>
 
     </aop:config>

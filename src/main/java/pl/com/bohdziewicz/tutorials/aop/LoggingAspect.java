@@ -23,4 +23,9 @@ public class LoggingAspect {
 
         logger.error("Exception: " + exception.getMessage());
     }
+
+    public void methodExecuted() {
+
+        logger.info("Method has already executed");
+    }
 }
