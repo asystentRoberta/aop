@@ -23,7 +23,7 @@
 
     </aop:config>
 
-    <bean id="customer" class="pl.com.bohdziewicz.tutorials.aop.CustomerRepositoryImpl"/>
+    <bean id="customerRepository" class="pl.com.bohdziewicz.tutorials.aop.CustomerRepositoryImpl"/>
 
 
 </beans>

@@ -6,8 +6,13 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class MainAop {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
-        CustomerRepository customer = context.getBean("customer", CustomerRepository.class);
-        System.out.println(customer.getCustomerName(1L));
-        customer.getCustomer(1L);
+
+        CustomerRepository customerRepository = context.getBean("customerRepository", CustomerRepository.class);
+        Customer customer = new Customer("Franek");
+        Customer customer1 = new Customer(null);
+
+        customerRepository.addCustomer(customer);
+        customerRepository.addCustomer(customer1);
+
     }
 }
