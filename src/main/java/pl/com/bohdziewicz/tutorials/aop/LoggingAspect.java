@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class LoggingAspect {
+
     private Logger logger = LogManager.getLogger(getClass().getName());
 
     public void logExecution() {
@@ -12,12 +13,14 @@ public class LoggingAspect {
     }
 
     public void warnIfNull(Object returnedValue) {
+
         if (returnedValue == null) {
             logger.warn("Returned object was null");
         }
     }
 
     public void serveExceptions(RuntimeException exception) {
+
         logger.error("Exception: " + exception.getMessage());
     }
 }

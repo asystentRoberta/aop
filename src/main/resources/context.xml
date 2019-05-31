@@ -9,6 +9,7 @@
    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd ">
 
 
+    <bean id="customerRepository" class="pl.com.bohdziewicz.tutorials.aop.CustomerRepositoryImpl"/>
     <bean id="loggingAspect" class="pl.com.bohdziewicz.tutorials.aop.LoggingAspect"/>
 
     <aop:config>
@@ -26,12 +27,8 @@
                                  returning="returnedValue"/>
             <aop:after-throwing method="serveExceptions" pointcut-ref="allAddersFromCustomerReository"
                                 throwing="exception"/>
-
         </aop:aspect>
 
     </aop:config>
-
-    <bean id="customerRepository" class="pl.com.bohdziewicz.tutorials.aop.CustomerRepositoryImpl"/>
-
 
 </beans>

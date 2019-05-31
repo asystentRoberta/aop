@@ -4,7 +4,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MainAop {
+
     public static void main(String[] args) {
+
         ApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
 
         CustomerRepository customerRepository = context.getBean("customerRepository", CustomerRepository.class);
@@ -13,6 +15,5 @@ public class MainAop {
 
         customerRepository.addCustomer(customer);
         customerRepository.addCustomer(customer1);
-
     }
 }
