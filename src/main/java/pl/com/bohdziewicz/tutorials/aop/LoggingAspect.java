@@ -1,5 +1,8 @@
 package pl.com.bohdziewicz.tutorials.aop;
 
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.aspectj.lang.JoinPoint;
@@ -28,5 +31,11 @@ public class LoggingAspect {
     public void methodExecuted(JoinPoint joinPoint) {
 
         logger.info("Method (method name): " + joinPoint.getSignature().getName() + " has already executed");
+
+        logger.info("Method " + joinPoint.getSignature().getName() +
+                "has executed with these arguments: " +
+                Arrays
+                        .stream(joinPoint.getArgs()).map(Object::toString)
+                        .collect(Collectors.joining(" ,")));
     }
 }
