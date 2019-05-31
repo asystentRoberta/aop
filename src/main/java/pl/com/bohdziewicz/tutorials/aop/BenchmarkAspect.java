@@ -27,6 +27,6 @@ public class BenchmarkAspect {
 
         long endTime = System.nanoTime();
 
-        logger.info("Executin time = " + (endTime - startTime) + " ns.");
+        logger.info("Execution time = " + (endTime - startTime) + " ns.");
     }
 }
