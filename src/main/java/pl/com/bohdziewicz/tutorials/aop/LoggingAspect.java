@@ -16,4 +16,8 @@ public class LoggingAspect {
             logger.warn("Returned object was null");
         }
     }
+
+    public void serveExceptions(RuntimeException exception) {
+        logger.error("Exception: " + exception.getMessage());
+    }
 }
