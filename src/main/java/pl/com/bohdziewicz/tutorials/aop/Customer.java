@@ -8,11 +8,4 @@ import lombok.Getter;
 public class Customer {
 
     private String name;
-
-    @Override public String toString() {
-
-        return "Customer{" +
-                "name='" + name + '\'' +
-                '}';
-    }
 }
