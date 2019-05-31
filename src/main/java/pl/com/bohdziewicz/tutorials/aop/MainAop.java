@@ -18,6 +18,7 @@ public class MainAop {
             customerRepository.addCustomer(customer1);
         } catch (Exception e) {
             //for now do nothing
+            //TODO: Maybe improve this "solution"
 
         }
     }
