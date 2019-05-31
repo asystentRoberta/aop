@@ -5,8 +5,6 @@ import org.apache.logging.log4j.Logger;
 
 public class BenchmarkAspect {
 
-    String name;
-
     private Logger logger = LogManager.getLogger(getClass().getName());
 
     public void measureExecutionTime() {
