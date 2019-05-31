@@ -13,7 +13,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
         if (customer.getName() == null) {
             throw new RuntimeException("Customer name can't be null");
         } else {
-            System.out.println("Customer save.");
+            System.out.println("Customer saved.");
         }
     }
 }
