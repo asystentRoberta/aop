@@ -8,4 +8,12 @@ public class CustomerRepositoryImpl implements CustomerRepository {
     public String getCustomerName(long customerId) {
         return "Marcin";
     }
+
+    public void addCustomer(Customer customer) {
+        if (customer.getName() == null) {
+            throw new RuntimeException("Customer name can't be null");
+        } else {
+            System.out.println("Customer saved.");
+        }
+    }
 }

@@ -12,18 +12,26 @@
     <bean id="loggingAspect" class="pl.com.bohdziewicz.tutorials.aop.LoggingAspect"/>
 
     <aop:config>
-        <aop:pointcut id="allGettersFromCustomerRepository" expression="execution(* pl.com.bohdziewicz.tutorials.aop.CustomerRepository.get* (..))"/>
+
+        <aop:pointcut id="allGettersFromCustomerRepository"
+                      expression="execution(* pl.com.bohdziewicz.tutorials.aop.CustomerRepository.get* (..))"/>
+        <aop:pointcut id="allAddersFromCustomerReository"
+                      expression="execution(* pl.com.bohdziewicz.tutorials.aop.CustomerRepository.add* (..))"/>
+
         <aop:aspect ref="loggingAspect">
             <aop:before method="logExecution"
                         pointcut-ref="allGettersFromCustomerRepository"/>
             <aop:after-returning method="warnIfNull"
                                  pointcut-ref="allGettersFromCustomerRepository"
                                  returning="returnedValue"/>
+            <aop:after-throwing method="serveExceptions" pointcut-ref="allAddersFromCustomerReository"
+                                throwing="exception"/>
+
         </aop:aspect>
 
     </aop:config>
 
-    <bean id="customer" class="pl.com.bohdziewicz.tutorials.aop.CustomerRepositoryImpl"/>
+    <bean id="customerRepository" class="pl.com.bohdziewicz.tutorials.aop.CustomerRepositoryImpl"/>
 
 
 </beans>
