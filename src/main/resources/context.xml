@@ -15,6 +15,7 @@
 
     <aop:config>
         <aop:aspect ref="loggingAspect">
+            <aop:before method="logExecution" pointcut="execution(* setSomething(..))"/>
 
         </aop:aspect>
 
