@@ -8,5 +8,7 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 
     <context:component-scan base-package="pl.com.bohdziewicz.tutorials.aop"/>
 
+    <bean id="simpleBeanImpl" class="pl.com.bohdziewicz.tutorials.aop.SimpleBeanImpl"/>
+
 
 </beans>
