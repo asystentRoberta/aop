@@ -11,6 +11,7 @@
 
     <bean id="loggingAspect" class="pl.com.bohdziewicz.tutorials.aop.LoggingAspect"/>
     <bean id="someBean" class="pl.com.bohdziewicz.tutorials.aop.SomeBean"/>
+    <bean id="anotherBean" class="pl.com.bohdziewicz.tutorials.aop.AnotherBean"/>
 
 
     <aop:config>
@@ -19,8 +20,9 @@
         <aop:pointcut id="anyMethodExecution" expression="execution(* *(..))"/>
         <aop:pointcut id="setterAndGetterExecution" expression="execution(* set*(..)) || execution(* get*(..))"/>
         <aop:pointcut id="methodWithoutParameters" expression="execution(* *())"/>
+        <aop:pointcut id="setterExecutionSomeBean" expression="execution(* pl.com.bohdziewicz.tutorials.aop.SomeBean.set*(..))"/>
         <aop:aspect ref="loggingAspect">
-            <aop:before method="logExecution" pointcut-ref="methodWithoutParameters"/>
+            <aop:before method="logExecution" pointcut-ref="setterExecutionSomeBean"/>
 
         </aop:aspect>
 
