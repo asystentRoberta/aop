@@ -15,7 +15,7 @@ public class SomeBean {
 
     }
 
-    public void anotherMethod(){
+    public void anotherMethod() {
 
     }
 }

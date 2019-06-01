@@ -20,7 +20,8 @@
         <aop:pointcut id="anyMethodExecution" expression="execution(* *(..))"/>
         <aop:pointcut id="setterAndGetterExecution" expression="execution(* set*(..)) || execution(* get*(..))"/>
         <aop:pointcut id="methodWithoutParameters" expression="execution(* *())"/>
-        <aop:pointcut id="setterExecutionSomeBean" expression="execution(* pl.com.bohdziewicz.tutorials.aop.SomeBean.set*(..))"/>
+        <aop:pointcut id="setterExecutionSomeBean"
+                      expression="execution(* pl.com.bohdziewicz.tutorials.aop.SomeBean.set*(..))"/>
         <aop:pointcut id="methodReturningString" expression="execution(String *(..))"/>
         <aop:aspect ref="loggingAspect">
             <aop:before method="logExecution" pointcut-ref="methodReturningString"/>
