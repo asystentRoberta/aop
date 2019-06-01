@@ -8,18 +8,17 @@ public class MainAop {
     public static void main(String[] args) {
 
         ApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
+        SomeBean someBean = context.getBean("someBean", SomeBean.class);
+        AnotherBean anotherBean = context.getBean("anotherBean", AnotherBean.class);
 
-        CustomerRepository customerRepository = context.getBean("customerRepository", CustomerRepository.class);
-        Customer customer = new Customer("Franek");
-        Customer customer1 = new Customer(null);
+        someBean.setAnotherThing(null);
+        someBean.setSomething(null);
+        someBean.getSomething();
+        someBean.anotherMethod();
 
-        customerRepository.addCustomer(customer);
-        try {
-            customerRepository.addCustomer(customer1);
-        } catch (Exception e) {
-            //for now do nothing
-            //TODO: Maybe improve this "solution"
-
-        }
+        anotherBean.anotherMethod();
+        anotherBean.getSomething();
+        anotherBean.setAnotherThing(null);
+        anotherBean.setAnotherThing(null);
     }
 }
