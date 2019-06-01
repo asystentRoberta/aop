@@ -10,5 +10,9 @@ public class MainAop {
         ApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
         SomeBean someBean = context.getBean("someBean", SomeBean.class);
 
+        someBean.setAnotherThing(null);
+        someBean.setSomething(null);
+        someBean.getSomething();
+
     }
 }

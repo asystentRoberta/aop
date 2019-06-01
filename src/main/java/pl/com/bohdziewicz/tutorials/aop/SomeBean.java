@@ -1,8 +1,17 @@
 package pl.com.bohdziewicz.tutorials.aop;
 
-import lombok.NoArgsConstructor;
-
-@NoArgsConstructor
 public class SomeBean {
 
+    public void setAnotherThing(String anotherThing) {
+
+    }
+
+    public String getSomething() {
+
+        return null;
+    }
+
+    public void setSomething(String something) {
+
+    }
 }
