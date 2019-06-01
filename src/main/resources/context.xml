@@ -16,8 +16,9 @@
     <aop:config>
         <aop:pointcut id="setSomethingExecution" expression="execution(* setSomething(..))"/>
         <aop:pointcut id="setterExecution" expression="execution(* set*(..))"/>
+        <aop:pointcut id="anyMethodExecution" expression="execution(* *(..))"/>
         <aop:aspect ref="loggingAspect">
-            <aop:before method="logExecution" pointcut-ref="setterExecution"/>
+            <aop:before method="logExecution" pointcut-ref="anyMethodExecution"/>
 
         </aop:aspect>
 
