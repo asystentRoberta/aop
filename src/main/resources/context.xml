@@ -9,32 +9,16 @@
    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd ">
 
 
-    <bean id="customerRepository" class="pl.com.bohdziewicz.tutorials.aop.CustomerRepositoryImpl"/>
+    <bean id="simpleBeanImpl" class="pl.com.bohdziewicz.tutorials.aop.SimpleBeanImpl"/>
     <bean id="loggingAspect" class="pl.com.bohdziewicz.tutorials.aop.LoggingAspect"/>
-    <bean id="benchmarkAspect" class="pl.com.bohdziewicz.tutorials.aop.BenchmarkAspect"/>
 
     <aop:config>
-
-        <aop:pointcut id="allGettersFromCustomerRepository"
-                      expression="execution(* pl.com.bohdziewicz.tutorials.aop.CustomerRepository.get* (..))"/>
-        <aop:pointcut id="allAddersFromCustomerReository"
-                      expression="execution(* pl.com.bohdziewicz.tutorials.aop.CustomerRepository.add* (..))"/>
-
         <aop:aspect ref="loggingAspect">
             <aop:before method="logExecution"
-                        pointcut-ref="allGettersFromCustomerRepository"/>
-            <aop:after-returning method="warnIfNull"
-                                 pointcut-ref="allGettersFromCustomerRepository"
-                                 returning="returnedValue"/>
-            <aop:after-throwing method="serveExceptions" pointcut-ref="allAddersFromCustomerReository"
-                                throwing="exception"/>
-            <aop:after method="methodExecuted" pointcut-ref="allAddersFromCustomerReository"/>
-        </aop:aspect>
-
-        <aop:aspect ref="benchmarkAspect">
-            <aop:around method="measureExecutionTime" pointcut="execution(* addCustomer(..))"/>
+                        pointcut="execution(* pl.com.bohdziewicz.tutorials.aop.SimpleBeanImpl.do* (..))"/>
         </aop:aspect>
 
     </aop:config>
+
 
 </beans>
