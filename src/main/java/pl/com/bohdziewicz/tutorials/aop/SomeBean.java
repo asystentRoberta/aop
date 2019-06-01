@@ -14,4 +14,8 @@ public class SomeBean {
     public void setSomething(String something) {
 
     }
+
+    public void anotherMethod(){
+
+    }
 }

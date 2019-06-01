@@ -13,6 +13,7 @@ public class MainAop {
         someBean.setAnotherThing(null);
         someBean.setSomething(null);
         someBean.getSomething();
+        someBean.anotherMethod();
 
     }
 }
