@@ -8,7 +8,7 @@ public class MainAop {
     public static void main(String[] args) {
 
         ApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
-        SimpleBean simpleBeanImpl = context.getBean("simpleBeanImpl", SimpleBean.class);
-        simpleBeanImpl.doSomething();
+        SomeBean someBean = context.getBean("someBean", SomeBean.class);
+
     }
 }
