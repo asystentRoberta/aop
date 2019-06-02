@@ -14,9 +14,11 @@
 
 
     <aop:config>
+        <aop:pointcut id="businessMethod" expression="@annotation(pl.com.bohdziewicz.tutorials.aop.BusinessMethod)"/>
+        <aop:pointcut id="businessClass" expression="@target(pl.com.bohdziewicz.tutorials.aop.BusinessClass)"/>
 
         <aop:aspect ref="loggingAspect">
-            <aop:before method="logWithStringExecution" pointcut="execution(* pl.com.bohdziewicz.tutorials.aop.SomeBean.*(String)) and args(argument)"/>
+            <aop:before method="logExecution" pointcut-ref="businessClass"/>
         </aop:aspect>
 
     </aop:config>
