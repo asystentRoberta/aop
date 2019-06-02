@@ -8,4 +8,9 @@ public class LoggingAspect {
 
         System.out.println("Method :" + joinPoint.getSignature() + " is executing");
     }
+
+    public void logWithStringExecution(String argument){
+
+        System.out.println("Argument: " + argument);
+    }
 }
