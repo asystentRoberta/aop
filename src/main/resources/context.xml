@@ -16,7 +16,7 @@
     <aop:config>
 
         <aop:aspect ref="loggingAspect">
-            <aop:before method="logWithStringExecution" pointcut="args(argument)"/>
+            <aop:before method="logWithStringExecution" pointcut="execution(* pl.com.bohdziewicz.tutorials.aop.SomeBean.*(String)) and args(argument)"/>
         </aop:aspect>
 
     </aop:config>
