@@ -1,5 +1,6 @@
 package pl.com.bohdziewicz.tutorials.aop;
 
+@BusinessClass
 public class SomeBean {
 
     @BusinessMethod
