@@ -3,7 +3,7 @@ Kurs ukończyłem 04.06.2019. Dużo mi dał (dzięki Artur!). Przystępuje już 
 
 > Kolejny kurs łyknięty ;) 
 
-![](http://bohdziewicz.com.pl/imagesForGit/fcoffee.jpg)
+![](http://bohdziewicz.com.pl/imagesForGit/fcoffee2.jpg)
 
 ##### 14 filmów
 [Link do playlisty](https://www.youtube.com/playlist?list=PLU2dl_1LV_ST5i0UXlelqa_0ljHtzu46X)
