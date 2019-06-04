@@ -11,6 +11,6 @@ public class MainAop {
 
         SomeBean someBean = context.getBean("someBean", SomeBean.class);
         someBean.method1();
-        someBean.method2();
+        //someBean.method2();
     }
 }
