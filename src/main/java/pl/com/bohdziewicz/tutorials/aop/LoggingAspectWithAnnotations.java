@@ -50,11 +50,12 @@ public class LoggingAspectWithAnnotations {
     }
 
     @Around("allMethods()")
-    private void logExecutionTome(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+    private Object logExecutionTome(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
 
         long start = System.currentTimeMillis();
-        proceedingJoinPoint.proceed();
+        Object methodResult = proceedingJoinPoint.proceed();
         long end = System.currentTimeMillis();
         logger.info("Aspect(around) -> excution method: -> " + (end - start) + "ms.");
+        return methodResult;
     }
 }
