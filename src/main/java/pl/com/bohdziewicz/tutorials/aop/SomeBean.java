@@ -3,10 +3,14 @@ package pl.com.bohdziewicz.tutorials.aop;
 import org.springframework.stereotype.Component;
 
 @Component("someBean")
-public class SomeBean implements SomeBeanInterface {
+public class SomeBean {
 
-    @Override public String someMethod() {
+    public void method1() {
 
-        return "I'm returning tested value";
+        method2();
+    }
+
+    public void method2() {
+
     }
 }
