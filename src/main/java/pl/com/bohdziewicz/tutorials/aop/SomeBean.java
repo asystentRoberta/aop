@@ -1,14 +1,16 @@
 package pl.com.bohdziewicz.tutorials.aop;
 
-@BusinessClass
+import org.springframework.stereotype.Component;
+
+@Component
 public class SomeBean {
 
-    @BusinessMethod
-    public void businessMethod() {
+    public String someMethod() {
 
+        return "I'm returning tested value";
     }
 
-    public void someMethod(String someString) {
-
+    public void throwException() throws RuntimeException {
+        throw new RuntimeException();
     }
 }
