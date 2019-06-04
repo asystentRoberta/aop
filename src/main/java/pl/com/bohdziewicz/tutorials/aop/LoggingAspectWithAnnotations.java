@@ -25,24 +25,25 @@ public class LoggingAspectWithAnnotations {
     @Before("allMethods()")
     public void logBefore(JoinPoint joinPoint) {
 
-        logger.info("Aspect -> now I'm executing method: -> " + joinPoint.getSignature().getName());
+        logger.info("Aspect(before) -> now I'm executing method: -> " + joinPoint.getSignature().getName());
     }
 
     @After("execution(* *(..))")
     private void logAfter(JoinPoint joinPoint) {
 
-        logger.info("Aspect -> after method: -> " + joinPoint.getSignature().getName());
+        logger.info("Aspect(after) -> after method: -> " + joinPoint.getSignature().getName());
     }
 
     @AfterReturning(pointcut = "allMethods()", returning = "returnedValue")
     private void afterReturning(Object returnedValue) {
 
-        logger.info("Aspect -> method returned: -> " + returnedValue);
+        logger.info("Aspect(afterReturning) -> method returned: -> " + returnedValue);
     }
 
     @AfterThrowing(pointcut = "allMethods()", throwing = "exception")
     private void logAfterThrowing(JoinPoint joinPoint, Throwable exception) {
 
-        logger.info("Aspect -> method -> " + joinPoint.getSignature().getName() + " -> has thrown -> " + exception);
+        logger.info("Aspect(afterThrowing) -> method -> " + joinPoint.getSignature().getName() + " -> has thrown -> "
+                + exception);
     }
 }
