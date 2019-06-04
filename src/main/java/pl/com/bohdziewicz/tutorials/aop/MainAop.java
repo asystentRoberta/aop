@@ -10,6 +10,11 @@ public class MainAop {
         ApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfig.class);
 
         SomeBean someBean = context.getBean("someBean", SomeBean.class);
-        someBean.someMethod();
+//        someBean.someMethod();
+        try {
+            someBean.throwException();
+        } catch (RuntimeException e) {
+
+        }
     }
 }

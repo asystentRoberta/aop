@@ -9,4 +9,8 @@ public class SomeBean {
 
         return "I'm returning tested value";
     }
+
+    public void throwException() throws RuntimeException {
+        throw new RuntimeException();
+    }
 }
